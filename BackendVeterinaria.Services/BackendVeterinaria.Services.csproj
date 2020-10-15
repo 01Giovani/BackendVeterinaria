@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackendVeterinaria.Core\BackendVeterinaria.Core.csproj">
+      <Project>{058aca55-6224-4f4c-8d2b-fdc6d50132ae}</Project>
+      <Name>BackendVeterinaria.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackendVeterinaria.SQL\BackendVeterinaria.SQL.csproj">
+      <Project>{d275ba63-6ed8-4bde-9a30-5dd93f0d0b8d}</Project>
+      <Name>BackendVeterinaria.SQL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
