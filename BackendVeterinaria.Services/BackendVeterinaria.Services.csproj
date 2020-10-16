@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaService.cs" />
     <Compile Include="ClienteService.cs" />
+    <Compile Include="FacturaService.cs" />
+    <Compile Include="MascotaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BackendVeterinaria.Core\BackendVeterinaria.Core.csproj">
