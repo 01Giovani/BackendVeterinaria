@@ -8,27 +8,13 @@ using System.Threading.Tasks;
 
 namespace BackendVeterinaria.SQL.Repositories
 {
-    public class MascotaRepository: IMascotaRepository
+    public class MascotaRepository : IMascotaRepository
     {
+        //constructor
         private VeterinariaContext _db;
         public MascotaRepository(VeterinariaContext db)
         {
             _db = db;
-        }
-
-        public Mascota EditarMascota(Mascota mascota)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EliminarMascota(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Mascota GetMascota(Guid id)
-        {
-            return _db.Mascotas.AsNoTracking().FirstOrDefault(x => x.Codigo == id);
         }
 
         public List<Mascota> GetMascotas()
@@ -36,9 +22,48 @@ namespace BackendVeterinaria.SQL.Repositories
             return _db.Mascotas.AsNoTracking().ToList();
         }
 
+        public Mascota GetMascota(Guid id)
+        {
+            return _db.Mascotas.AsNoTracking().FirstOrDefault(x => x.Codigo == id);
+        }
+
+        public void EliminarMascota(Guid id)
+        {
+            // throw new NotImplementedException();
+            Mascota mascota = _db.Mascotas.FirstOrDefault(x => x.Codigo == id);
+            if (mascota != null)
+            {
+
+                _db.Mascotas.Remove(mascota);
+                _db.SaveChanges();
+            }
+        }
+
         public Mascota GuardarNuevaMascota(Mascota mascota)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            _db.Mascotas.Add(mascota);
+            _db.SaveChanges();
+
+            return mascota;
+        }
+
+        public Mascota EditarMascota(Mascota mascota)
+        {
+            //throw new NotImplementedException()
+            Mascota mascotaRemoto = _db.Mascotas.FirstOrDefault(x => x.Codigo == mascota.Codigo);
+            if (mascotaRemoto != null)
+            {
+                mascotaRemoto.Nombre = mascota.Nombre;
+                mascotaRemoto.Especie = mascota.Especie;
+                mascotaRemoto.Raza = mascota.Raza;
+                mascotaRemoto.Color = mascota.Color;
+                mascotaRemoto.Tamaño = mascota.Tamaño;
+                mascotaRemoto.IdCliente = mascota.IdCliente;
+                _db.SaveChanges();
+            }
+
+            return mascotaRemoto;
         }
     }
 }
