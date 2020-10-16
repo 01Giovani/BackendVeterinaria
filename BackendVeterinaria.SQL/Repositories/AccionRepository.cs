@@ -21,12 +21,12 @@ namespace BackendVeterinaria.SQL.Repositories
             return _db.Acciones.AsNoTracking().ToList();
         }
 
-        public Accion GetAccion(String id)
+        public Accion GetAccion(string id)
         {
             return _db.Acciones.AsNoTracking().FirstOrDefault(result => result.Codigo == id);
         }
 
-        public void EliminarAccion(String id)
+        public void EliminarAccion(string id)
         {
             Accion accion = _db.Acciones.FirstOrDefault(x => x.Codigo == id);
             if (accion != null)

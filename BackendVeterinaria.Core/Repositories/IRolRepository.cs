@@ -9,7 +9,7 @@ namespace BackendVeterinaria.Core.Repositories
 {
     public interface IRolRepository
     {
-        List<Rol> GetRol();
+        List<Rol> GetRoles();
         Rol GetRol(String id);
         void EliminarRol(String id);
         Rol GuardarNuevoRol(Rol rol);

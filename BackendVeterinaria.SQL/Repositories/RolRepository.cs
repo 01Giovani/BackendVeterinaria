@@ -17,7 +17,7 @@ namespace BackendVeterinaria.SQL.Repositories
             _db = db;
         }
 
-        public List<Rol> GetRol()
+        public List<Rol> GetRoles()
         {
             return _db.Roles.AsNoTracking().ToList();
         }
