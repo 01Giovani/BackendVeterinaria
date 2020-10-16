@@ -21,16 +21,16 @@ namespace BackendVeterinaria.SQL
         {
         }
 
-        public DbSet<Accion> Acciones { get; set; }
-        public DbSet<Cita> Citas { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Consulta> Consultas { get; set; }
+        public DbSet<Accion> Acciones { get; set; } 
+        public DbSet<Cita> Citas { get; set; } 
+        public DbSet<Cliente> Clientes { get; set; } 
+        public DbSet<Consulta> Consultas { get; set; } 
         public DbSet<Empleado> Empleados { get; set; }
-        public DbSet<Factura> Facturas { get; set; }
-        public DbSet<Mascota> Mascotas { get; set; }
-        public DbSet<Rol> Roles { get; set; }
-        public DbSet<Servicio> Servicios { get; set; }        
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Factura> Facturas { get; set; } 
+        public DbSet<Mascota> Mascotas { get; set; } 
+        public DbSet<Rol> Roles { get; set; } 
+        public DbSet<Servicio> Servicios { get; set; }     
+        public DbSet<Usuario> Usuarios { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

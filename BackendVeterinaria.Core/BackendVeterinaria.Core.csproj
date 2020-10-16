@@ -54,8 +54,13 @@
     <Compile Include="Model\Servicio.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IAccionRepository.cs" />
+    <Compile Include="Repositories\ICitaRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Repositories\IFacturaRepository.cs" />
     <Compile Include="Repositories\IMascotaRepository.cs" />
+    <Compile Include="Repositories\IRolRepository.cs" />
+    <Compile Include="Repositories\IUsuarioRepository.cs" />
     <Compile Include="Services\IClienteService.cs" />
   </ItemGroup>
   <ItemGroup />
