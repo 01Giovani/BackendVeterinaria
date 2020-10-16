@@ -10,5 +10,9 @@ namespace BackendVeterinaria.Core.Services
     public interface IClienteService
     {
         List<Cliente> GetClientes();
+        Cliente GetCliente(Guid id);
+        void EliminarCliente(Guid id);
+        Cliente GuardarNuevoCliente(Cliente cliente);
+        Cliente EditarCliente(Cliente cliente);
     }
 }
