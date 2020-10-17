@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace BackendVeterinaria.Core.DTO
 {
-    public class MascotaDTO
+   public class CitaDTO
     {
         public Guid Codigo { get; set; }
-        public string Nombre { get; set; }
-        public string Especie { get; set; }
-        public string Raza { get; set; }
-        public string Color { get; set; }
-        public string Tamaño { get; set; }
+        public DateTime FechaReserva { get; set; }
+        public DateTime FechaIngreso { get; set; }
         public Guid IdCliente { get; set; }
+        public string MotivoConsulta { get; set; }
+
     }
 }

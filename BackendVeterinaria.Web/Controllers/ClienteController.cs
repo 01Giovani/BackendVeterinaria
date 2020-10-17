@@ -35,8 +35,21 @@ namespace BackendVeterinaria.Web.Controllers
        
         public List<ClienteDTO> GetClientes()
         {
+
             List<Cliente> clientes = _clienteService.GetClientes();
             return _mapper.Map<List<ClienteDTO>>(clientes);
+        }
+
+
+        public void Eliminar(Guid id) {
+
+            _clienteService.EliminarCliente(id);
+        }
+
+        public ClienteDTO GetCliente(Guid id)
+        {
+            Cliente cliente = _clienteService.GetCliente(id);
+            return _mapper.Map<ClienteDTO>(cliente);
         }
     }
 }
