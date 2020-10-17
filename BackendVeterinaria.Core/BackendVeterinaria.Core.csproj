@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\CitaDTO.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
+    <Compile Include="DTO\FacturaDTO.cs" />
     <Compile Include="DTO\MascotaDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="Model\Accion.cs" />
     <Compile Include="Model\Cita.cs" />
     <Compile Include="Model\Cliente.cs" />
@@ -61,7 +64,11 @@
     <Compile Include="Repositories\IMascotaRepository.cs" />
     <Compile Include="Repositories\IRolRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Services\ICitaService.cs" />
     <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="Services\IFacturaService.cs" />
+    <Compile Include="Services\IMascotaService.cs" />
+    <Compile Include="Services\IUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
