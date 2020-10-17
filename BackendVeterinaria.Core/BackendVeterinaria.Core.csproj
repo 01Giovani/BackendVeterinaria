@@ -55,7 +55,9 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Repositories\IConsultaRepository.cs" />
     <Compile Include="Repositories\IMascotaRepository.cs" />
+    <Compile Include="Repositories\IServicioRepository.cs" />
     <Compile Include="Services\IClienteService.cs" />
   </ItemGroup>
   <ItemGroup />

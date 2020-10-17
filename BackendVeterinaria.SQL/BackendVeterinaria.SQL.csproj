@@ -68,7 +68,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ConsultaRepository.cs" />
     <Compile Include="Repositories\MascotaRepository.cs" />
+    <Compile Include="Repositories\ServicioRepository.cs" />
     <Compile Include="VeteriariaContext.cs" />
   </ItemGroup>
   <ItemGroup>
