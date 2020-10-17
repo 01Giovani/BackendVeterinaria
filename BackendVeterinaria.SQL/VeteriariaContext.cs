@@ -14,11 +14,13 @@ namespace BackendVeterinaria.SQL
         static VeterinariaContext()
         {
             Database.SetInitializer<VeterinariaContext>(null);
+            
         }
 
         public VeterinariaContext()
             : base("Name=VeterinariaContext")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Accion> Acciones { get; set; } 
