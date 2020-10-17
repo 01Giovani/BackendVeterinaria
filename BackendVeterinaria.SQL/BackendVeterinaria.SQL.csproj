@@ -71,8 +71,10 @@
     <Compile Include="Repositories\CitaRepository.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\FacturaRepository.cs" />
+    <Compile Include="Repositories\ConsultaRepository.cs" />
     <Compile Include="Repositories\MascotaRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
+    <Compile Include="Repositories\ServicioRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="VeteriariaContext.cs" />
   </ItemGroup>

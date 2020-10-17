@@ -61,8 +61,10 @@
     <Compile Include="Repositories\ICitaRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
     <Compile Include="Repositories\IFacturaRepository.cs" />
+    <Compile Include="Repositories\IConsultaRepository.cs" />
     <Compile Include="Repositories\IMascotaRepository.cs" />
     <Compile Include="Repositories\IRolRepository.cs" />
+    <Compile Include="Repositories\IServicioRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />
     <Compile Include="Services\ICitaService.cs" />
     <Compile Include="Services\IClienteService.cs" />

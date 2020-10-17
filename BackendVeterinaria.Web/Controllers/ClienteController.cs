@@ -32,7 +32,8 @@ namespace BackendVeterinaria.Web.Controllers
 
             _mapper = config.CreateMapper();
         }
-       
+
+        [Route("Api/Cliente/GetClientes")]
         public List<ClienteDTO> GetClientes()
         {
 
@@ -40,16 +41,27 @@ namespace BackendVeterinaria.Web.Controllers
             return _mapper.Map<List<ClienteDTO>>(clientes);
         }
 
-
+        [Route("Api/Cliente/Eliminar")]
         public void Eliminar(Guid id) {
 
             _clienteService.EliminarCliente(id);
         }
 
+        [Route("Api/Cliente/GetCliente")]
         public ClienteDTO GetCliente(Guid id)
         {
             Cliente cliente = _clienteService.GetCliente(id);
             return _mapper.Map<ClienteDTO>(cliente);
+        }
+
+        [Route("Api/Cliente/Guardar")]
+        [HttpPost]
+        public ClienteDTO GuardarCliente(ClienteDTO cliente)
+        {
+            cliente.Codigo = Guid.NewGuid();
+            Cliente objCliente = _mapper.Map<Cliente>(cliente);
+            
+            return _mapper.Map<ClienteDTO>(_clienteService.GuardarNuevoCliente(objCliente));
         }
     }
 }
