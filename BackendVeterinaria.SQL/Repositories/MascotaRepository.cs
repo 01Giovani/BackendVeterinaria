@@ -28,8 +28,7 @@ namespace BackendVeterinaria.SQL.Repositories
         }
 
         public void EliminarMascota(Guid id)
-        {
-            // throw new NotImplementedException();
+        {            
             Mascota mascota = _db.Mascotas.FirstOrDefault(x => x.Codigo == id);
             if (mascota != null)
             {
@@ -40,8 +39,7 @@ namespace BackendVeterinaria.SQL.Repositories
         }
 
         public Mascota GuardarNuevaMascota(Mascota mascota)
-        {
-            //throw new NotImplementedException();
+        {            
             _db.Mascotas.Add(mascota);
             _db.SaveChanges();
 
@@ -50,7 +48,7 @@ namespace BackendVeterinaria.SQL.Repositories
 
         public Mascota EditarMascota(Mascota mascota)
         {
-            //throw new NotImplementedException()
+            
             Mascota mascotaRemoto = _db.Mascotas.FirstOrDefault(x => x.Codigo == mascota.Codigo);
             if (mascotaRemoto != null)
             {

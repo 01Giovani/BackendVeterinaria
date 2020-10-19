@@ -23,17 +23,19 @@ namespace BackendVeterinaria.Web.Controllers
             _citaService = citaService;
         }
 
+
         static CitaController()
         {
             var config = new MapperConfiguration(x =>
             {
-                x.CreateMap<Cliente, ClienteDTO>();
-                x.CreateMap<Cita, CitaDTO>();
+                x.CreateMap<Cliente, ClienteDTO>().ReverseMap();
+                x.CreateMap<Cita, CitaDTO>().ReverseMap();
             });
 
             _mapper = config.CreateMapper();
         }
 
+        [Route("Api/Cita/GetCitas")]
         public List<CitaDTO> GetCitas()
         {
 
@@ -41,17 +43,28 @@ namespace BackendVeterinaria.Web.Controllers
             return _mapper.Map<List<CitaDTO>>(citas);
         }
 
-
+        [Route("Api/Cita/Eliminar")]
         public void Eliminar(Guid id)
         {
 
             _citaService.EliminarCita(id);
         }
 
+        [Route("Api/Cita/GetCita")]
         public CitaDTO GetCita(Guid id)
         {
             Cita cita = _citaService.GetCita(id);
             return _mapper.Map<CitaDTO>(cita);
+        }
+
+        [Route("Api/Cita/GuardarCita")]
+        [HttpPost]
+        public CitaDTO GuardarCita(CitaDTO cita)
+        {
+            cita.Codigo = Guid.NewGuid();
+            Cita objCita = _mapper.Map<Cita>(cita);
+            
+            return _mapper.Map<CitaDTO>(_citaService.GuardarNuevaCita(objCita));            
         }
     }
 }

@@ -26,8 +26,8 @@ namespace BackendVeterinaria.Web.Controllers
         {
             var config = new MapperConfiguration(x =>
             {
-                x.CreateMap<Cliente, ClienteDTO>();
-                x.CreateMap<Mascota, MascotaDTO>();                
+                x.CreateMap<Cliente, ClienteDTO>().ReverseMap();
+                x.CreateMap<Mascota, MascotaDTO>().ReverseMap();                
             });
 
             _mapper = config.CreateMapper();
