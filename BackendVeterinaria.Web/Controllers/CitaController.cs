@@ -4,6 +4,7 @@ using BackendVeterinaria.Core.Model;
 using BackendVeterinaria.Core.Services;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -29,7 +30,9 @@ namespace BackendVeterinaria.Web.Controllers
             var config = new MapperConfiguration(x =>
             {
                 x.CreateMap<Cliente, ClienteDTO>().ReverseMap();
-                x.CreateMap<Cita, CitaDTO>().ReverseMap();
+                x.CreateMap<Cita, CitaDTO>()
+                .ForMember(o=>o.FechaReserva,d=>d.MapFrom(c=>c.FechaReservada.ToString("dd/MM/yyyy")))
+                .ForMember(o => o.FechaIngreso, d => d.MapFrom(c => c.FechaIngreso.ToString("dd/MM/yyyy")));
             });
 
             _mapper = config.CreateMapper();
@@ -59,12 +62,18 @@ namespace BackendVeterinaria.Web.Controllers
 
         [Route("Api/Cita/GuardarCita")]
         [HttpPost]
-        public CitaDTO GuardarCita(CitaDTO cita)
+        public CitaDTO GuardarCita(CitaINDTO cita)
         {
-            cita.Codigo = Guid.NewGuid();
-            Cita objCita = _mapper.Map<Cita>(cita);
+
+            DateTime fecha = DateTime.Parse(cita.FechaReserva, new CultureInfo("es-SV"));
             
-            return _mapper.Map<CitaDTO>(_citaService.GuardarNuevaCita(objCita));            
+            return _mapper.Map<CitaDTO>(_citaService.GuardarNuevaCita(new Cita { 
+                Codigo = Guid.NewGuid(),
+                FechaIngreso = DateTime.Now,
+                IdCliente = cita.IdCliente,
+                MotivoConsulta= cita.MotivoConsulta,
+                FechaReservada = fecha
+            }));            
         }
     }
 }
