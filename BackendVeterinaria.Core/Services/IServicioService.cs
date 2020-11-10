@@ -1,15 +1,13 @@
-﻿using System;
+﻿using BackendVeterinaria.Core.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BackendVeterinaria.Core.Model;
 
-namespace BackendVeterinaria.Core.Repositories
+namespace BackendVeterinaria.Core.Services
 {
-
-
-    public interface IServicioRepository
+    public interface IServicioService
     {
         List<Servicio> GetServicios();
         Servicio GetServicio(Guid id);
