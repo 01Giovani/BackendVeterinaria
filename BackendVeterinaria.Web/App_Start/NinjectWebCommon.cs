@@ -97,6 +97,9 @@ namespace BackendVeterinaria.Web.App_Start
             //repositorios
             kernel.Bind<IServicioRepository>().To<ServicioRepository>().InRequestScope();
             //servicios
+            kernel.Bind<IConsultaService>().To<ConsultaService>().InRequestScope();
+            kernel.Bind<IEmpleadoRepository>().To<EmpleadoRepository>().InRequestScope();
+
             kernel.Bind<IServicioService>().To<ServicioService>().InRequestScope();
 
         }

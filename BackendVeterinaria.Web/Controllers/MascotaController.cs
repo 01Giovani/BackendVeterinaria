@@ -37,7 +37,11 @@ namespace BackendVeterinaria.Web.Controllers
         {
 
             List<Mascota> mascotas = _mascotaService.GetMascotas();
-            return _mapper.Map<List<MascotaDTO>>(mascotas);
+            var response = _mapper.Map<List<MascotaDTO>>(mascotas);
+            response.ForEach(x => {
+                x.Cliente = mascotas.FirstOrDefault(z => z.Codigo == x.Codigo).Cliente.Nombre + " " + mascotas.FirstOrDefault(z => z.Codigo == x.Codigo).Cliente.Apellido;
+            });
+            return response;
         }
 
         [Route("Api/Mascota/Eliminar")]

@@ -19,5 +19,6 @@ namespace BackendVeterinaria.Core.Model
         public System.Guid IdCliente { get; set; }
         public string MotivoConsulta { get; set; }
         public virtual ICollection<Consulta> Consultas { get; set; }
+        public  Cliente Cliente { get; set; }
     }
 }

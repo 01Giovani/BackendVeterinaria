@@ -16,5 +16,6 @@ namespace BackendVeterinaria.Core.DTO
         public string Color { get; set; }
         public string Tamaño { get; set; }
         public Guid IdCliente { get; set; }
+        public string Cliente { get; set; }
     }
 }

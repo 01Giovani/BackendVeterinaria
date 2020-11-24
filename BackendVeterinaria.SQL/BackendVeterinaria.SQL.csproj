@@ -65,11 +65,16 @@
     <Compile Include="Migrations\202010140452247_inicial.designer.cs">
       <DependentUpon>202010140452247_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011240509485_rel_cliente_en_citas.cs" />
+    <Compile Include="Migrations\202011240509485_rel_cliente_en_citas.designer.cs">
+      <DependentUpon>202011240509485_rel_cliente_en_citas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccionRepository.cs" />
     <Compile Include="Repositories\CitaRepository.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\EmpleadoRepository.cs" />
     <Compile Include="Repositories\FacturaRepository.cs" />
     <Compile Include="Repositories\ConsultaRepository.cs" />
     <Compile Include="Repositories\MascotaRepository.cs" />
@@ -91,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010140452247_inicial.resx">
       <DependentUpon>202010140452247_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011240509485_rel_cliente_en_citas.resx">
+      <DependentUpon>202011240509485_rel_cliente_en_citas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

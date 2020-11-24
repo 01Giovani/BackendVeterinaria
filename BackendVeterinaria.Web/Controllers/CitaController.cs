@@ -43,7 +43,11 @@ namespace BackendVeterinaria.Web.Controllers
         {
 
             List<Cita> citas = _citaService.GetCitas();
-            return _mapper.Map<List<CitaDTO>>(citas);
+            var response = _mapper.Map<List<CitaDTO>>(citas);
+            response.ForEach(x => {
+                x.Cliente = citas.FirstOrDefault(c => c.Codigo == x.Codigo).Cliente.Nombre + " " + citas.FirstOrDefault(c => c.Codigo == x.Codigo).Cliente.Apellido;
+            });
+            return response;
         }
 
         [Route("Api/Cita/Eliminar")]

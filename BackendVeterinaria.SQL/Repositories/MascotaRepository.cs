@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace BackendVeterinaria.SQL.Repositories
 {
@@ -19,7 +20,7 @@ namespace BackendVeterinaria.SQL.Repositories
 
         public List<Mascota> GetMascotas()
         {
-            return _db.Mascotas.AsNoTracking().ToList();
+            return _db.Mascotas.Include(x=>x.Cliente).AsNoTracking().ToList();
         }
 
         public Mascota GetMascota(Guid id)
@@ -62,6 +63,11 @@ namespace BackendVeterinaria.SQL.Repositories
             }
 
             return mascotaRemoto;
+        }
+
+        public List<Mascota> GetMascotasCliente(Guid idCliente)
+        {
+            return _db.Mascotas.Where(x => x.IdCliente == idCliente).ToList();
         }
     }
 }

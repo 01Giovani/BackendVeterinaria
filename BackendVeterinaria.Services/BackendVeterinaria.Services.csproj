@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CitaService.cs" />
     <Compile Include="ClienteService.cs" />
+    <Compile Include="ConsultaService.cs" />
     <Compile Include="FacturaService.cs" />
     <Compile Include="MascotaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
