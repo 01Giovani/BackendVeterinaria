@@ -47,6 +47,7 @@
     <Compile Include="DTO\ConsultaPendienteDTO.cs" />
     <Compile Include="DTO\FacturaDTO.cs" />
     <Compile Include="DTO\MascotaDTO.cs" />
+    <Compile Include="DTO\ServicioDTO.cs" />
     <Compile Include="DTO\UsuarioDTO.cs" />
     <Compile Include="Model\Accion.cs" />
     <Compile Include="Model\Cita.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Services\IConsultaService.cs" />
     <Compile Include="Services\IFacturaService.cs" />
     <Compile Include="Services\IMascotaService.cs" />
+    <Compile Include="Services\IServicioService.cs" />
     <Compile Include="Services\IUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -18,7 +18,7 @@ namespace BackendVeterinaria.SQL.Repositories
             _db = db;
         }
 
-        public List<Servicio> GetServicio()
+        public List<Servicio> GetServicios()
         {
             return _db.Servicios.AsNoTracking().ToList();
         }
