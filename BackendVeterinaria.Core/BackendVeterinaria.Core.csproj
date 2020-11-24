@@ -44,6 +44,7 @@
     <Compile Include="DTO\CitaDTO.cs" />
     <Compile Include="DTO\CitaINDTO.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
+    <Compile Include="DTO\ConsultaPendienteDTO.cs" />
     <Compile Include="DTO\FacturaDTO.cs" />
     <Compile Include="DTO\MascotaDTO.cs" />
     <Compile Include="DTO\UsuarioDTO.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Repositories\IAccionRepository.cs" />
     <Compile Include="Repositories\ICitaRepository.cs" />
     <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Repositories\IEmpleadoRepository.cs" />
     <Compile Include="Repositories\IFacturaRepository.cs" />
     <Compile Include="Repositories\IConsultaRepository.cs" />
     <Compile Include="Repositories\IMascotaRepository.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Repositories\IUsuarioRepository.cs" />
     <Compile Include="Services\ICitaService.cs" />
     <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="Services\IConsultaService.cs" />
     <Compile Include="Services\IFacturaService.cs" />
     <Compile Include="Services\IMascotaService.cs" />
     <Compile Include="Services\IUsuarioService.cs" />

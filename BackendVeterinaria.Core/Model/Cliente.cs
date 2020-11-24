@@ -20,5 +20,6 @@ namespace BackendVeterinaria.Core.Model
         public string Telefono { get; set; }
         public string Email { get; set; }
         public virtual ICollection<Mascota> Mascotas { get; set; }
+        public virtual ICollection<Cita> Citas { get; set; }
     }
 }

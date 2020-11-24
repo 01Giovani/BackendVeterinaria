@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace BackendVeterinaria.SQL.Repositories
 {
@@ -18,7 +19,7 @@ namespace BackendVeterinaria.SQL.Repositories
 
         public List<Cita> GetCitas()
         {
-            return _db.Citas.AsNoTracking().ToList();
+            return _db.Citas.Include(x=>x.Cliente).AsNoTracking().ToList();
         }
 
         public Cita GetCita(Guid id)
@@ -60,6 +61,11 @@ namespace BackendVeterinaria.SQL.Repositories
             }
 
             return citaRemota;
+        }
+
+        public List<Cita> GetCitasSinConsulta()
+        {
+            return _db.Citas.Include(x=>x.Cliente).Where(x => ( x.Consultas.Count == 0) || (x.Consultas.FirstOrDefault().Facturas.Count == 0)).ToList();
         }
     }
 }

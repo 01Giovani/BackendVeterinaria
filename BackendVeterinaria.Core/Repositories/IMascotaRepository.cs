@@ -14,5 +14,6 @@ namespace BackendVeterinaria.Core.Repositories
         void EliminarMascota(Guid id);
         Mascota GuardarNuevaMascota(Mascota mascota);
         Mascota EditarMascota(Mascota mascota);
+        List<Mascota> GetMascotasCliente(Guid idCliente);
     }
 }

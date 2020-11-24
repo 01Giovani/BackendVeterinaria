@@ -16,8 +16,7 @@ namespace BackendVeterinaria.Core.Repositories
         void EliminarCita(Guid id);
         Cita GuardarNuevaCita(Cita cita);
         Cita EditarCita(Cita cita);
-
-
+        List<Cita> GetCitasSinConsulta();
 
 
     }

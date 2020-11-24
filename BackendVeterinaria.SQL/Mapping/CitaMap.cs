@@ -26,6 +26,8 @@ namespace BackendVeterinaria.SQL.Mapping
             this.Property(t => t.FechaIngreso).HasColumnName("FechaIngreso");
             this.Property(t => t.IdCliente).HasColumnName("IdCliente");
             this.Property(t => t.MotivoConsulta).HasColumnName("MotivoConsulta");
+
+            HasRequired(x => x.Cliente).WithMany(x => x.Citas).HasForeignKey(x => x.IdCliente);
         }
     }
 }
